@@ -46,9 +46,49 @@
         .container {
             background: white;
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 1rem;
+            width: 100%;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
             box-shadow: 0 0 10px rgba(135, 22, 73, 0.1);
         }
+
+        /* Apply tighter width and center alignment on small screens */
+        @media (max-width: 575.98px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        /* Larger devices: constrain width and center */
+        @media (min-width: 576px) {
+            .container {
+                padding: 2rem;
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+
+
 
         .nav-pink {
             background-color: var(--bs-main-pink);
@@ -57,11 +97,14 @@
         .nav-pink a {
             color: white !important;
             font-weight: 600;
-            margin-right: 1rem;
         }
 
         .nav-pink a:hover {
             color: var(--bs-light-pink) !important;
+        }
+
+        .breadcrumb-container {
+            margin: 1rem;
         }
     </style>
 </head>
@@ -70,17 +113,36 @@
     <nav class="navbar navbar-expand-lg nav-pink fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="/">Jo's Laravel Site</a>
-            <div>
-                <a href="/about" class="nav-link d-inline">About</a>
-                <a href="/contact" class="nav-link d-inline">Contact</a>
-                <a href="/projects" class="nav-link d-inline">Projects</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/projects" class="nav-link">Projects</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <!-- Breadcrumbs Section -->
+    <div class="breadcrumb-container">
+        @yield('breadcrumbs')
+    </div>
+
+    <div class="container mt-3 ">
         @yield('content')
     </div>
 
+    <!-- Bootstrap JS (for navbar toggler) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

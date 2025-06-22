@@ -15,8 +15,8 @@ class PageController extends Controller
     {
         return view('contact');
     }
-    public function project()
+    public function projects()
     {
-        return view('project');
+        return view('projects');
     }
 }

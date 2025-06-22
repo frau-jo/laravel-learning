@@ -10,4 +10,4 @@ use App\Http\Controllers\PageController;
 
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/contact', [PageController::class, 'contact']);
-Route::get('/project', [PageController::class, 'project']);
+Route::get('/projects', [PageController::class, 'projects']);

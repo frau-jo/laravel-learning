@@ -5,8 +5,17 @@
     <title>@yield('title', 'My Laravel Site')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Fonts: Montserrat and Didot -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Didot';
+            src: local('Didot'), local('Didot LT STD'),
+                 url('https://fonts.cdnfonts.com/s/14206/Didot-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,20 +38,16 @@
             padding-top: 4rem;
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Didot', serif;
+            color: var(--bs-main-pink);
+        }
+
         .container {
             background: white;
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: 0 0 10px rgba(135, 22, 73, 0.1);
-        }
-
-        h1 {
-            color: var(--bs-main-pink);
-            font-weight: 800;
-        }
-
-        p, li {
-            font-size: 1.1rem;
         }
 
         .nav-pink {
@@ -64,11 +69,11 @@
 
     <nav class="navbar navbar-expand-lg nav-pink fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="/">Jo's Site</a>
+            <a class="navbar-brand text-white" href="/">Jo's Laravel Site</a>
             <div>
                 <a href="/about" class="nav-link d-inline">About</a>
                 <a href="/contact" class="nav-link d-inline">Contact</a>
-                <a href="/project" class="nav-link d-inline">Projects</a>
+                <a href="/projects" class="nav-link d-inline">Projects</a>
             </div>
         </div>
     </nav>

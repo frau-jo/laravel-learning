@@ -4,5 +4,5 @@
 
 @section('content')
     <h1>Contact Jo</h1>
-    <p>You can reach Jo at jo@example.com</p>
+    <p>You can reach Jo at jisolon.83@gmail.com</p>
 @endsection
